@@ -7,7 +7,6 @@ if test ! $(xcode-select); then
     xcode-select --install
 fi
 
-
 # Check for Homebrew to be present, install if it's missing
 if test ! $(which brew); then
     echo "Installing homebrew..."
@@ -18,28 +17,28 @@ fi
 brew update
 
 PACKAGES=(
-ansible
-awscli
-jckuester/tap/awsls
-jckuester/tap/awsrm
-brew-pip
-azure-cli
-coreutils
-curl
-ffmpeg
-git
-git-extras
-grep
-imagemagick
-oci-cli
-openssl@3
-pyenv
-pyenv-virtualenv
-python@3.10
-terraform-docs
-terraformer
-tfenv
-wget
+    ansible
+    awscli
+    jckuester/tap/awsls
+    jckuester/tap/awsrm
+    brew-pip
+    azure-cli
+    coreutils
+    curl
+    ffmpeg
+    git
+    git-extras
+    grep
+    imagemagick
+    oci-cli
+    openssl@3
+    pyenv
+    pyenv-virtualenv
+    python@3.10
+    terraform-docs
+    terraformer
+    tfenv
+    wget
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -59,27 +58,27 @@ pip install ${PYTHON_PACKAGES[@]}
 
 echo "Installing cask..."
 CASKS=(
-1password
-appcleaner
-chromedriver
-cyberduck
-discord
-# dropbox   
-firefox  
-gas-mask
-google-chrome 
-handbrake
-hazel
-imageoptim
-insomnia
-league-of-legends
-selfcontrol
-slack
-spectacle
-spotify
-visual-studio-code
-vlc
-wavebox
+    # 1password
+    appcleaner
+    chromedriver
+    cyberduck
+    discord
+    # dropbox
+    firefox
+    gas-mask
+    # google-chrome
+    handbrake
+    hazel
+    imageoptim
+    insomnia
+    league-of-legends
+    selfcontrol
+    slack
+    # spectacle
+    spotify
+    visual-studio-code
+    vlc
+    wavebox
 )
 echo "Installing cask apps..."
 brew install ${CASKS[@]}
@@ -92,6 +91,5 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
 
 echo "Macbook setup completed!"
